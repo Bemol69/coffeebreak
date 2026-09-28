@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nuestra carta · Coffee Break Rancagua</title>
+  <meta name="description" content="Cafés, bebidas frías, pastelería y salados de Coffee Break, cafetería de especialidad en Rancagua.">
+  <meta name="theme-color" content="#C4552B">
+  <link rel="icon" href="/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body data-page="productos">
+  <div id="header"></div>
+
+  <main>
+    <header class="page-head">
+      <div class="wrap">
+        <p class="crumbs"><a href="/">Inicio</a> / Carta</p>
+        <h1 class="display h-xl"><span data-text="site.productsPageTitle"></span> <em data-text="site.productsPageTitleItalic"></em></h1>
+        <p class="lede" data-text="site.productsPageText"></p>
+      </div>
+    </header>
+
+    <nav class="filters" aria-label="Categorías">
+      <div class="wrap filters__inner" id="filters"></div>
+    </nav>
+
+    <div class="wrap" id="menu"></div>
+
+    <section class="section section--terra cta-band">
+      <div class="wrap">
+        <h2 class="display h-md">¿Se te antojó algo?<br><em>Te esperamos.</em></h2>
+        <a class="btn btn--solid" href="/#visitanos">Horarios y ubicación <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="modal" id="modal" aria-labelledby="modal-title">
+    <div class="modal__box">
+      <button class="modal__close" type="button" aria-label="Cerrar" data-close>×</button>
+      <div class="modal__img"><img id="modal-img" alt=""></div>
+      <div class="modal__body">
+        <span class="card__cat" id="modal-cat"></span>
+        <h2 class="display h-md" id="modal-title"></h2>
+        <p id="modal-desc"></p>
+        <span class="modal__price" id="modal-price"></span>
+        <p class="modal__note" id="modal-note"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <div id="footer"></div>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/productos.js"></script>
+</body>
+</html>

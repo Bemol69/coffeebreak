@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Panel · Coffee Break</title>
+  <link rel="icon" href="/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <!-- LOGIN -->
+  <section class="login" id="login" hidden>
+    <form class="login__box" id="login-form">
+      <img src="/img/logo.svg" alt="" width="96" height="96">
+      <h1>Panel <em>Coffee Break</em></h1>
+      <p>Ingresa la contraseña para editar tu sitio.</p>
+      <label class="field">
+        <span>Contraseña</span>
+        <input type="password" name="password" autocomplete="current-password" required autofocus>
+      </label>
+      <button class="btn btn--primary" type="submit">Entrar</button>
+      <p class="login__error" id="login-error" role="alert"></p>
+      <a class="login__back" href="/">← Volver al sitio</a>
+    </form>
+  </section>
+
+  <!-- APP -->
+  <div class="app" id="app" hidden>
+    <aside class="side">
+      <a class="side__brand" href="/" target="_blank" rel="noopener">
+        <img src="/img/logo.svg" alt="" id="side-logo">
+        <span>Coffee Break<small>Panel de administración</small></span>
+      </a>
+      <nav class="side__nav" id="tabs">
+        <button data-tab="textos" class="active">Textos del sitio</button>
+        <button data-tab="imagenes">Imágenes</button>
+        <button data-tab="productos">Productos</button>
+        <button data-tab="contacto">Horario y contacto</button>
+        <button data-tab="extras">Pizarra y reseñas</button>
+      </nav>
+      <div class="side__foot">
+        <a href="/" target="_blank" rel="noopener">Ver sitio ↗</a>
+        <button type="button" id="logout">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 id="tab-title">Textos del sitio</h1>
+          <p id="tab-sub">Títulos, descripciones y botones de cada sección.</p>
+        </div>
+        <div class="topbar__actions">
+          <span class="dirty" id="dirty" hidden>Cambios sin guardar</span>
+          <button class="btn" type="button" id="discard">Descartar</button>
+          <button class="btn btn--primary" type="button" id="save">Guardar cambios</button>
+        </div>
+      </header>
+
+      <div class="panel" data-panel="textos" id="panel-textos"></div>
+      <div class="panel" data-panel="imagenes" id="panel-imagenes" hidden></div>
+      <div class="panel" data-panel="productos" id="panel-productos" hidden></div>
+      <div class="panel" data-panel="contacto" id="panel-contacto" hidden></div>
+      <div class="panel" data-panel="extras" id="panel-extras" hidden></div>
+    </main>
+  </div>
+
+  <!-- Editor de producto -->
+  <dialog class="drawer" id="product-dialog">
+    <form method="dialog" class="drawer__box" id="product-form">
+      <header class="drawer__head">
+        <h2 id="product-dialog-title">Producto</h2>
+        <button type="button" class="icon-btn" data-close aria-label="Cerrar">×</button>
+      </header>
+      <div class="drawer__body" id="product-fields"></div>
+      <footer class="drawer__foot">
+        <button type="button" class="btn btn--danger" id="product-delete">Eliminar</button>
+        <span></span>
+        <button type="button" class="btn" data-close>Cancelar</button>
+        <button type="submit" class="btn btn--primary">Listo</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

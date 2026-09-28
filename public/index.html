@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coffee Break · Café de especialidad en Rancagua</title>
+  <meta name="description" content="Coffee Break — cafetería de especialidad en el corazón de Rancagua. Café, pastelería, sándwiches y un patio para tu pausa favorita.">
+  <meta name="theme-color" content="#C4552B">
+  <meta property="og:title" content="Coffee Break · Rancagua">
+  <meta property="og:description" content="¡Ven a tomar un rico break! Café de especialidad en el corazón de Rancagua.">
+  <meta property="og:image" content="/img/logo.svg">
+  <link rel="icon" href="/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body data-page="home">
+  <div id="header"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <img class="hero__img" data-src="site.heroImage" alt="Barista preparando un café en Coffee Break">
+      <div class="wrap hero__content">
+        <p class="eyebrow hero__eyebrow" data-text="site.heroEyebrow"></p>
+        <h1 class="display h-xl hero__title"><span data-text="site.heroTitle"></span><br><em data-text="site.heroTitleItalic"></em></h1>
+        <p class="hero__note" data-text="site.heroSideNote"></p>
+        <div class="hero__bottom">
+          <div>
+            <p class="status" id="status"><span class="status__dot"></span><span></span></p>
+            <p class="hero__text" data-text="site.heroText"></p>
+          </div>
+          <div class="hero__actions">
+            <a class="btn btn--solid" href="/productos"><span data-text="site.heroCta"></span> <span class="arrow">→</span></a>
+            <a class="btn btn--ghost" href="#visitanos" data-text="site.heroCta2"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
+
+    <!-- NOSOTROS -->
+    <section class="section" id="nosotros">
+      <div class="wrap about">
+        <div class="blob blob--a reveal"><img data-src="site.aboutImage1" alt="Café servido en Coffee Break" loading="lazy"></div>
+        <div class="about__text reveal">
+          <p class="eyebrow" data-text="site.aboutEyebrow"></p>
+          <h2 class="display h-lg"><span data-text="site.aboutTitle"></span><br><em data-text="site.aboutTitleItalic"></em></h2>
+          <p data-text="site.aboutText"></p>
+          <a class="link" href="/productos"><span data-text="site.aboutLink"></span> <span class="arrow">→</span></a>
+        </div>
+        <div class="blob blob--b reveal"><img data-src="site.aboutImage2" alt="Detalle de latte art" loading="lazy"></div>
+      </div>
+    </section>
+
+    <!-- DESTACADOS -->
+    <section class="section section--terra featured" id="carta">
+      <div class="featured__bg" aria-hidden="true">la carta</div>
+      <div class="wrap">
+        <div class="featured__head reveal">
+          <div>
+            <p class="eyebrow" data-text="site.featuredEyebrow"></p>
+            <h2 class="display h-lg"><span data-text="site.featuredTitle"></span> <em data-text="site.featuredTitleItalic"></em></h2>
+          </div>
+          <p data-text="site.featuredText"></p>
+        </div>
+        <div class="cards" id="featured"></div>
+        <div class="featured__foot">
+          <a class="btn btn--solid" href="/productos"><span data-text="site.featuredCta"></span> <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIBROS POR CAFÉ -->
+    <section class="section section--cream">
+      <div class="wrap split">
+        <div class="split__img reveal">
+          <img data-src="site.booksImage" alt="Rincón acogedor de Coffee Break" loading="lazy">
+          <div class="split__badge">Trae uno,<br>llévate otro</div>
+        </div>
+        <div class="split__text reveal">
+          <p class="eyebrow" data-text="site.booksEyebrow"></p>
+          <h2 class="display h-lg"><span data-text="site.booksTitle"></span> <em data-text="site.booksTitleItalic"></em></h2>
+          <p data-text="site.booksText"></p>
+          <a class="btn btn--dark" href="#visitanos">Ven a conocernos <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANDAMIENTOS -->
+    <section class="section section--chalk">
+      <div class="wrap">
+        <div class="chalk__head reveal">
+          <p class="eyebrow" data-text="site.rulesEyebrow"></p>
+          <h2 class="display h-md"><span data-text="site.rulesTitle"></span><br><em data-text="site.rulesTitleItalic"></em></h2>
+        </div>
+        <ol class="rules reveal" id="rules"></ol>
+      </div>
+    </section>
+
+    <!-- RESEÑAS -->
+    <section class="section">
+      <div class="wrap">
+        <div class="reviews__head reveal">
+          <div>
+            <p class="eyebrow" data-text="site.reviewsEyebrow"></p>
+            <h2 class="display h-lg"><span data-text="site.reviewsTitle"></span> <em data-text="site.reviewsTitleItalic"></em></h2>
+          </div>
+          <span class="stars" aria-label="5 estrellas">★★★★★</span>
+        </div>
+        <div class="reviews" id="reviews"></div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="section section--cream">
+      <div class="wrap">
+        <div class="reviews__head reveal">
+          <div>
+            <p class="eyebrow" data-text="site.galleryEyebrow"></p>
+            <h2 class="display h-lg"><span data-text="site.galleryTitle"></span> <em data-text="site.galleryTitleItalic"></em></h2>
+          </div>
+          <a class="link" id="ig-link" href="#" target="_blank" rel="noopener">Síguenos en Instagram <span class="arrow">↗</span></a>
+        </div>
+        <div class="gallery reveal" id="gallery"></div>
+      </div>
+    </section>
+
+    <!-- VISÍTANOS -->
+    <section class="section section--dark" id="visitanos">
+      <div class="wrap visit">
+        <div class="visit__info reveal">
+          <p class="eyebrow" data-text="site.visitEyebrow"></p>
+          <h2 class="display h-lg"><span data-text="site.visitTitle"></span><br><em data-text="site.visitTitleItalic"></em></h2>
+          <p class="lede" data-text="site.visitText"></p>
+          <p class="addr" data-text="contact.address"></p>
+          <p class="addr-note"><span data-text="contact.city"></span> · <span data-text="contact.services"></span></p>
+          <table class="hours" id="hours"></table>
+          <div class="visit__actions" id="visit-actions"></div>
+        </div>
+        <div class="map reveal" id="map"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>
