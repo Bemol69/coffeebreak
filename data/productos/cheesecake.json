@@ -1,0 +1,11 @@
+{
+  "nombre": "Cheesecake",
+  "precio": null,
+  "foto": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=1200&q=80&auto=format&fit=crop",
+  "descripcion": "Base crocante, relleno cremoso y cobertura de frutos rojos.",
+  "etiqueta": "Casero",
+  "destacado": true,
+  "orden": 100,
+  "agotado": false,
+  "visible": true
+}

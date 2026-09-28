@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta · %%NOMBRE%% %%CIUDAD%%</title>
+  <meta name="description" content="La carta de %%NOMBRE%%: cafés, bebidas frías, pastelería casera y salados. %%DIRECCION%%, %%CIUDAD%%.">
+  <meta name="theme-color" content="#17100D">
+  <link rel="icon" href="img/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="img/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <!-- SEO:HEAD (lo completa scripts/build.mjs) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-carta">
+<!-- PARCIAL:iconos -->
+<!-- PARCIAL:nav -->
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap page-hero__inner">
+        <div>
+          <p class="crumbs"><a href="./">Inicio</a> <span>/</span> Carta</p>
+          <h1>Nuestra <em>carta</em></h1>
+          <p class="page-hero__lead">Todo lo que preparamos en %%NOMBRE%%. Los productos pueden variar según el día: pregunta en la barra por los pasteles de hoy.</p>
+        </div>
+        <div class="page-hero__meta">
+          <p class="status" data-status><span class="status__dot"></span><span data-status-text>Horario de atención</span></p>
+          <p><svg class="ic ic--sm"><use href="#i-pin"/></svg> %%DIRECCION%%, %%CIUDAD%%</p>
+          <!-- SI:SERVICIOS --><p><svg class="ic ic--sm"><use href="#i-bag"/></svg> %%SERVICIOS%%</p><!-- /SI:SERVICIOS -->
+        </div>
+      </div>
+    </section>
+
+    <nav class="filters" aria-label="Categorías de la carta">
+      <div class="wrap filters__inner" data-filters><!-- LISTA:FILTROS --></div>
+    </nav>
+
+    <div class="wrap menu" data-menu><!-- LISTA:CARTA -->
+    </div>
+
+    <section class="wrap">
+      <div class="books books--cta reveal">
+        <div class="books__text">
+          <p class="kicker">¿Se te antojó algo?</p>
+          <h2>Te esperamos <em>en el local</em></h2>
+          <p>%%DIRECCION%%, %%CIUDAD%%. Consumo en el local o para llevar.</p>
+          <a class="btn btn--dark btn--sm" href="./#visitanos">Horario y ubicación <svg class="ic ic--sm"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="books__img books__img--logo"><img src="img/logo.svg" alt="%%NOMBRE%%" width="220" height="220" loading="lazy"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Ficha del producto -->
+  <dialog class="sheet" id="sheet" aria-labelledby="sheetName">
+    <div class="sheet__box">
+      <button class="sheet__close" type="button" data-close aria-label="Cerrar"><svg class="ic"><use href="#i-close"/></svg></button>
+      <div class="sheet__img"><img id="sheetImg" alt=""></div>
+      <div class="sheet__body">
+        <p class="kicker" id="sheetCat"></p>
+        <h2 id="sheetName"></h2>
+        <p class="sheet__desc" id="sheetDesc"></p>
+        <p class="sheet__price" id="sheetPrice"></p>
+        <p class="sheet__note" id="sheetNote"></p>
+        <a class="btn btn--dark" href="%%MAPS_URL%%" target="_blank" rel="noopener">Cómo llegar <svg class="ic ic--sm"><use href="#i-arrow-up"/></svg></a>
+      </div>
+    </div>
+  </dialog>
+
+<!-- PARCIAL:footer -->
+
+  <script>window.TIENDA = %%TIENDA_JSON%%; window.CARTA = %%CARTA_JSON%%;</script>
+  <script src="app.js" defer></script>
+</body>
+</html>

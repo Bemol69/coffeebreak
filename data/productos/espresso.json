@@ -1,0 +1,11 @@
+{
+  "nombre": "Espresso",
+  "precio": null,
+  "foto": "https://images.unsplash.com/photo-1559496417-e7f25cb247f3?w=1200&q=80&auto=format&fit=crop",
+  "descripcion": "Un shot intenso de café de especialidad, extraído al momento.",
+  "etiqueta": "",
+  "destacado": false,
+  "orden": 40,
+  "agotado": false,
+  "visible": true
+}

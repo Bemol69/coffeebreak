@@ -1,0 +1,13 @@
+{
+  "nombre": "Pastelería",
+  "icono": "pastel",
+  "descripcion": "Dulces caseros para acompañar.",
+  "productos": [
+    "cheesecake",
+    "mini-galletas-chips",
+    "donuts",
+    "pasteles-del-dia"
+  ],
+  "orden": 30,
+  "visible": true
+}

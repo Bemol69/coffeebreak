@@ -1,0 +1,18 @@
+{
+  "etiqueta": "Café de especialidad · Rancagua",
+  "titulo": "Tu pausa favorita,",
+  "destacado": "en el corazón de Rancagua",
+  "bajada": "Café recién preparado, pastelería casera y un patio donde el tiempo va más lento. Pasa por tu break antes del trabajo, a media tarde o cuando necesites un respiro.",
+  "foto": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=1400&q=80&auto=format&fit=crop",
+  "foto_mini": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500&q=80&auto=format&fit=crop",
+  "mini_titulo": "Latte vainilla frío",
+  "mini_texto": "El favorito del verano",
+  "franja": [
+    "Café de especialidad",
+    "Pastelería casera",
+    "Libros por café",
+    "Patio acogedor",
+    "Para llevar",
+    "Hecho con cariño"
+  ]
+}

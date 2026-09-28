@@ -1,0 +1,247 @@
+# Configuración del panel /admin (Sveltia CMS)
+# Cada cambio que se guarda aquí crea un commit en GitHub.
+# Vercel arma la web (scripts/build.mjs) y la publica en ~30 segundos.
+
+backend:
+  name: github
+  repo: %%GITHUB_REPO%%
+  branch: main
+  commit_messages:
+    create: "Contenido: crea {{collection}} «{{slug}}»"
+    update: "Contenido: actualiza {{collection}} «{{slug}}»"
+    delete: "Contenido: elimina {{collection}} «{{slug}}»"
+    uploadMedia: "Contenido: sube foto {{path}}"
+    deleteMedia: "Contenido: elimina foto {{path}}"
+
+site_url: %%SITE_URL%%
+display_url: %%SITE_URL%%
+logo_url: ../img/logo.jpg
+
+media_folder: img/productos
+public_folder: /img/productos
+
+# Nombres de archivo sin tildes ni ñ (ej: "Café helado" -> cafe-helado.json)
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# Las fotos del celular se achican y convierten a WebP al subirlas, para que la web cargue rápido
+media_libraries:
+  default:
+    config:
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 1600
+          height: 1600
+
+collections:
+  # ---------- PRODUCTOS ----------
+  - name: productos
+    label: Productos
+    label_singular: producto
+    description: "Todo lo que aparece en la carta. Para que un producto salga en una categoría, agrégalo desde Categorías. Marca «Destacado» para mostrarlo en la portada."
+    icon: local_cafe
+    folder: data/productos
+    format: json
+    create: true
+    delete: true
+    identifier_field: nombre
+    slug: "{{nombre}}"
+    summary: "{{nombre}}"
+    thumbnail: foto
+    sortable_fields:
+      fields: [orden, nombre]
+      default:
+        field: orden
+        direction: ascending
+    fields:
+      - { name: nombre, label: Nombre del producto, widget: string }
+      - name: precio
+        label: Precio
+        widget: number
+        value_type: int
+        min: 0
+        required: false
+        hint: "Opcional. Solo números, sin puntos ni signo $. Ej: 2900. Vacío = no se muestra precio."
+      - { name: foto, label: Foto, widget: image, hint: "Cuadrada o vertical, con buena luz. Se ve en la carta y en la ficha." }
+      - { name: descripcion, label: Descripción, widget: text, required: false, hint: "Una o dos frases. Aparece en la tarjeta y en la ficha del producto." }
+      - { name: etiqueta, label: Etiqueta, widget: string, required: false, hint: "Opcional. Aparece sobre la foto. Ej: Nuevo, Temporada, Favorito." }
+      - name: destacado
+        label: Destacado en la portada
+        widget: boolean
+        default: false
+        hint: "Los destacados aparecen en «Nuestros favoritos» de la página principal (se muestran los 4 primeros según su posición)."
+      - { name: orden, label: Posición, widget: number, value_type: int, default: 1000, hint: "Los números más bajos aparecen primero." }
+      - { name: agotado, label: Agotado hoy, widget: boolean, default: false, hint: "Se sigue viendo en la carta, marcado como «Agotado hoy»." }
+      - { name: visible, label: Mostrar en la web, widget: boolean, default: true, hint: "Desactívalo para ocultar el producto sin borrarlo." }
+
+  # ---------- CATEGORÍAS ----------
+  - name: categorias
+    label: Categorías
+    label_singular: categoría
+    description: "Las secciones de la carta (Café caliente, Bebidas frías…). Abre una para elegir qué productos aparecen en ella."
+    icon: filter_list
+    folder: data/categorias
+    format: json
+    create: true
+    delete: true
+    identifier_field: nombre
+    slug: "{{nombre}}"
+    summary: "{{nombre}}"
+    sortable_fields:
+      fields: [orden, nombre]
+      default:
+        field: orden
+        direction: ascending
+    fields:
+      - { name: nombre, label: Nombre, widget: string }
+      - name: icono
+        label: Ícono
+        widget: select
+        options:
+          - { label: "Taza caliente", value: taza }
+          - { label: "Vaso frío", value: vaso }
+          - { label: "Pastel", value: pastel }
+          - { label: "Sándwich", value: sandwich }
+          - { label: "Galleta", value: galleta }
+          - { label: "Grano de café", value: grano }
+        default: taza
+      - { name: descripcion, label: Descripción corta, widget: string, required: false, hint: "Aparece bajo el nombre en la carta." }
+      - name: productos
+        label: Productos en esta categoría
+        widget: relation
+        collection: productos
+        value_field: "{{slug}}"
+        search_fields: [nombre]
+        display_fields: ["{{nombre}}"]
+        multiple: true
+        required: false
+        hint: "Busca y marca los productos. El orden de la carta sigue la posición de cada producto."
+      - { name: orden, label: Posición, widget: number, value_type: int, default: 100, hint: "Los números más bajos aparecen primero." }
+      - { name: visible, label: Mostrar en la web, widget: boolean, default: true }
+
+  # ---------- PÁGINA PRINCIPAL ----------
+  - name: inicio
+    label: Página principal
+    description: "Portada, textos de cada sección, fotos, frases de la pizarra, reseñas y galería."
+    icon: home
+    files:
+      - name: portada
+        label: Portada
+        file: data/portada.json
+        format: json
+        fields:
+          - { name: etiqueta, label: Texto pequeño superior, widget: string }
+          - { name: titulo, label: Título, widget: string }
+          - { name: destacado, label: Parte destacada del título, widget: string, required: false, hint: "Aparece en cursiva y color caramelo al final del título." }
+          - { name: bajada, label: Texto bajo el título, widget: text }
+          - name: foto
+            label: Foto principal (circular)
+            widget: image
+            media_folder: /img/portada
+            public_folder: /img/portada
+            hint: "Ideal una taza vista desde arriba, cuadrada. Se recorta en círculo."
+          - name: foto_mini
+            label: Foto de la tarjeta flotante
+            widget: image
+            media_folder: /img/portada
+            public_folder: /img/portada
+          - { name: mini_titulo, label: Tarjeta flotante · título, widget: string, required: false }
+          - { name: mini_texto, label: Tarjeta flotante · texto, widget: string, required: false }
+          - name: franja
+            label: Franja de frases en movimiento
+            label_singular: frase
+            widget: list
+            min: 1
+            field: { name: frase, label: Frase, widget: string }
+            hint: "Frases cortas (2 a 4 palabras)."
+
+      - name: secciones
+        label: Secciones
+        file: data/secciones.json
+        format: json
+        fields:
+          - name: nosotros
+            label: Nosotros
+            widget: object
+            fields:
+              - { name: etiqueta, label: Texto pequeño, widget: string }
+              - { name: titulo, label: Título, widget: string }
+              - { name: destacado, label: Parte destacada, widget: string, required: false }
+              - { name: texto, label: Texto, widget: text }
+              - { name: foto1, label: Foto grande, widget: image, media_folder: /img/secciones, public_folder: /img/secciones }
+              - { name: foto2, label: Foto pequeña, widget: image, media_folder: /img/secciones, public_folder: /img/secciones }
+          - name: libros
+            label: Libros por café
+            widget: object
+            fields:
+              - { name: etiqueta, label: Texto pequeño, widget: string }
+              - { name: titulo, label: Título, widget: string }
+              - { name: destacado, label: Parte destacada, widget: string, required: false }
+              - { name: texto, label: Texto, widget: text }
+              - { name: foto, label: Foto, widget: image, media_folder: /img/secciones, public_folder: /img/secciones }
+          - name: mandamientos
+            label: Mandamientos de la pizarra
+            label_singular: frase
+            widget: list
+            field: { name: frase, label: Frase, widget: string }
+          - name: resenas
+            label: Reseñas de clientes
+            label_singular: reseña
+            widget: list
+            summary: "{{nombre}} · {{origen}}"
+            fields:
+              - { name: nombre, label: Nombre, widget: string }
+              - { name: origen, label: Dónde la dejó, widget: select, options: [Google, Instagram, En el local], default: Google }
+              - { name: texto, label: Opinión, widget: text }
+              - { name: estrellas, label: Estrellas, widget: number, value_type: int, min: 1, max: 5, default: 5 }
+          - name: galeria
+            label: Galería (Instagram)
+            label_singular: foto
+            widget: list
+            field: { name: foto, label: Foto, widget: image, media_folder: /img/secciones, public_folder: /img/secciones }
+            hint: "Se muestran 6 fotos cuadradas."
+
+  # ---------- CONTACTO Y HORARIO ----------
+  - name: ajustes
+    label: Contacto y horario
+    icon: schedule
+    files:
+      - name: ajustes
+        label: Contacto, dirección y horario
+        file: data/ajustes.json
+        format: json
+        fields:
+          - { name: direccion, label: Dirección, widget: string, hint: "Calle y número (sin la ciudad)." }
+          - { name: ciudad, label: Ciudad, widget: string }
+          - { name: region, label: Región, widget: string, required: false }
+          - { name: referencia, label: Referencia, widget: string, required: false, hint: "Ej: Paseo Estado, centro de Rancagua" }
+          - { name: servicios, label: Servicios, widget: string, required: false, hint: "Ej: Consumo en el local · Para llevar" }
+          - { name: maps_url, label: Enlace de Google Maps, widget: string, hint: "Lo que se abre al tocar «Cómo llegar»." }
+          - { name: instagram, label: Usuario de Instagram, widget: string, required: false, hint: "Sin @." }
+          - name: whatsapp
+            label: WhatsApp
+            widget: string
+            required: false
+            pattern: ['^$|^\+?[0-9 ]{10,17}$', "Formato internacional, ej: 56912345678"]
+            hint: "Opcional. Con código de país y sin +. Vacío = no se muestra."
+          - { name: telefono, label: Teléfono, widget: string, required: false }
+          - { name: email, label: Correo, widget: string, required: false }
+          - { name: google_nota, label: Nota en Google, widget: string, required: false, hint: "Ej: 4,8. Vacío = se oculta." }
+          - { name: google_resenas, label: Cantidad de reseñas en Google, widget: number, value_type: int, required: false }
+          - name: horario
+            label: Horario de atención
+            label_singular: día
+            widget: list
+            allow_add: false
+            allow_remove: false
+            summary: "{{dia}}: {{abre}} – {{cierra}}"
+            hint: "Se usa para mostrar «Abierto ahora» en la web."
+            fields:
+              - { name: dia, label: Día, widget: string }
+              - { name: abre, label: Abre, widget: string, required: false, pattern: ['^$|^\d{2}:\d{2}$', "Formato HH:MM, ej 07:00"] }
+              - { name: cierra, label: Cierra, widget: string, required: false, pattern: ['^$|^\d{2}:\d{2}$', "Formato HH:MM, ej 20:00"] }
+              - { name: cerrado, label: Cerrado este día, widget: boolean, default: false }

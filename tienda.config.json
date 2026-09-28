@@ -1,0 +1,11 @@
+{
+  "_ayuda": "Datos fijos del local (los define el desarrollador). Contacto, horario, portada, textos y productos van en data/, que el cliente edita desde /admin.",
+  "nombre": "Coffee Break",
+  "rubro": "Cafetería de especialidad",
+  "schema_tipo": "CafeOrCoffeeShop",
+  "seo_titulo": "Coffee Break · Cafetería de especialidad en Rancagua",
+  "seo_descripcion": "Coffee Break, cafetería de especialidad en Estado 634, Rancagua. Capuccino, lattes, café helado, cheesecake, ciabattas y pastelería casera. Abierto de lunes a sábado.",
+  "github_repo": "Bemol69/coffeebreak",
+  "site_url": "https://coffeebreak-rancagua.vercel.app",
+  "google_verificacion": ""
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>%%SEO_TITULO%%</title>
+  <meta name="description" content="%%SEO_DESCRIPCION%%">
+  <meta name="theme-color" content="#17100D">
+  <link rel="icon" href="img/favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="img/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <!-- SEO:HEAD (lo completa scripts/build.mjs: canonical, Open Graph y datos estructurados) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-home">
+<!-- PARCIAL:iconos -->
+<!-- PARCIAL:nav -->
+
+  <main>
+    <!-- ============ PORTADA ============ -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero__inner">
+        <div class="hero__text">
+          <p class="kicker kicker--light">%%HERO_ETIQUETA%%</p>
+          <h1>%%HERO_TITULO%% <em>%%HERO_DESTACADO%%</em></h1>
+          <p class="hero__lead">%%HERO_BAJADA%%</p>
+          <div class="hero__cta">
+            <a class="btn btn--light" href="carta.html">Ver la carta <svg class="ic ic--sm"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--outline-light" href="#visitanos">Horario y ubicación</a>
+          </div>
+          <ul class="hero__facts">
+            <li class="status" data-status><span class="status__dot"></span><span data-status-text>Revisa nuestro horario</span></li>
+            <!-- SI:GOOGLE_NOTA --><li><svg class="ic ic--sm ic--fill"><use href="#i-star"/></svg> %%GOOGLE_NOTA%% en Google</li><!-- /SI:GOOGLE_NOTA -->
+            <li><svg class="ic ic--sm"><use href="#i-pin"/></svg> %%DIRECCION%%, %%CIUDAD%%</li>
+          </ul>
+        </div>
+
+        <div class="hero__art" aria-hidden="true">
+          <div class="hero__plate">
+            <svg class="hero__ring" viewBox="0 0 200 200">
+              <defs><path id="ring" d="M100 100m-86 0a86 86 0 1 1 172 0a86 86 0 1 1-172 0"/></defs>
+              <text><textPath href="#ring" textLength="536" lengthAdjust="spacing">CAFÉ DE ESPECIALIDAD · HECHO CON CARIÑO · RANCAGUA · COFFEE BREAK ·</textPath></text>
+            </svg>
+            <img class="hero__cup" src="%%HERO_FOTO%%" alt="" fetchpriority="high">
+          </div>
+          <span class="bean bean--1"></span><span class="bean bean--2"></span><span class="bean bean--3"></span><span class="bean bean--4"></span><span class="bean bean--5"></span>
+          <!-- SI:MINI_TITULO -->
+          <div class="hero__mini">
+            <img src="%%HERO_MINI%%" alt="" loading="lazy">
+            <div><strong>%%MINI_TITULO%%</strong><span>%%MINI_TEXTO%%</span></div>
+          </div>
+          <!-- /SI:MINI_TITULO -->
+          <img class="hero__badge" src="img/logo-mark.svg" alt="" width="96" height="96">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CATEGORÍAS ============ -->
+    <section class="cats" aria-label="Categorías de la carta">
+      <div class="wrap cats__inner"><!-- LISTA:CATEGORIAS -->
+      </div>
+    </section>
+
+    <!-- ============ FAVORITOS ============ -->
+    <section class="section" id="favoritos">
+      <div class="wrap">
+        <header class="head reveal">
+          <div>
+            <p class="kicker">Lo más pedido</p>
+            <h2>Nuestros <em>favoritos</em></h2>
+          </div>
+          <p class="head__text">Una probadita de la carta. Hay %%TOTAL_PRODUCTOS%% opciones esperándote entre cafés, bebidas frías, pastelería y salados.</p>
+        </header>
+        <div class="grid grid--4 reveal"><!-- LISTA:DESTACADOS -->
+        </div>
+        <div class="center reveal">
+          <a class="btn btn--dark" href="carta.html">Ver toda la carta <svg class="ic ic--sm"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SI:FRANJA -->
+    <div class="marquee" aria-hidden="true"><div class="marquee__track"><!-- LISTA:FRANJA --></div></div>
+    <!-- /SI:FRANJA -->
+
+    <!-- ============ NOSOTROS ============ -->
+    <section class="section" id="nosotros">
+      <div class="wrap about">
+        <div class="about__media reveal">
+          <img class="about__big" src="%%NOS_FOTO1%%" alt="El interior de %%NOMBRE%%" loading="lazy">
+          <img class="about__small" src="%%NOS_FOTO2%%" alt="Cafés servidos en %%NOMBRE%%" loading="lazy">
+          <div class="about__stamp"><img src="img/logo-mark.svg" alt="" width="64" height="64"><span>Desde el corazón<br>de %%CIUDAD%%</span></div>
+        </div>
+        <div class="about__text reveal">
+          <p class="kicker">%%NOS_ETIQUETA%%</p>
+          <h2>%%NOS_TITULO%% <em>%%NOS_DESTACADO%%</em></h2>
+          <p>%%NOS_TEXTO%%</p>
+          <ul class="perks">
+            <li><span class="perks__ic"><svg class="ic"><use href="#i-grano"/></svg></span><div><strong>Café de especialidad</strong><span>Preparado al momento, taza por taza.</span></div></li>
+            <li><span class="perks__ic"><svg class="ic"><use href="#i-pastel"/></svg></span><div><strong>Pastelería casera</strong><span>Cheesecake, galletas y pasteles del día.</span></div></li>
+            <li><span class="perks__ic"><svg class="ic"><use href="#i-leaf"/></svg></span><div><strong>Patio acogedor</strong><span>Para venir con amigas, en familia o a trabajar.</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LIBROS POR CAFÉ ============ -->
+    <section class="books-wrap">
+      <div class="wrap">
+        <div class="books reveal">
+          <div class="books__text">
+            <p class="kicker"><svg class="ic ic--sm"><use href="#i-book"/></svg> %%LIB_ETIQUETA%%</p>
+            <h2>%%LIB_TITULO%% <em>%%LIB_DESTACADO%%</em></h2>
+            <p>%%LIB_TEXTO%%</p>
+            <a class="btn btn--dark btn--sm" href="#visitanos">Ven a conocernos <svg class="ic ic--sm"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="books__img"><img src="%%LIB_FOTO%%" alt="Rincón de lectura en %%NOMBRE%%" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SI:MANDAMIENTOS -->
+    <!-- ============ PIZARRA ============ -->
+    <section class="section section--dark rules">
+      <div class="wrap rules__inner">
+        <header class="rules__head reveal">
+          <p class="kicker kicker--light">Escrito en nuestra pizarra</p>
+          <h2>Los mandamientos de <em>tu pausa favorita</em></h2>
+          <img src="img/logo.svg" alt="" width="150" height="150" loading="lazy">
+        </header>
+        <ol class="rules__list reveal"><!-- LISTA:MANDAMIENTOS -->
+        </ol>
+      </div>
+    </section>
+    <!-- /SI:MANDAMIENTOS -->
+
+    <!-- SI:RESENAS -->
+    <!-- ============ RESEÑAS ============ -->
+    <section class="section section--latte" id="resenas">
+      <div class="wrap">
+        <header class="head head--center reveal">
+          <p class="kicker">Lo que dicen de nosotros</p>
+          <h2>Clientes <em>felices</em></h2>
+          <!-- SI:GOOGLE_NOTA --><p class="rating"><span class="rating__n">%%GOOGLE_NOTA%%</span><span class="rating__stars">★★★★★</span><span>en Google<!-- SI:GOOGLE_RESENAS --> · %%GOOGLE_RESENAS%% reseñas<!-- /SI:GOOGLE_RESENAS --></span></p><!-- /SI:GOOGLE_NOTA -->
+        </header>
+        <div class="reviews reveal"><!-- LISTA:RESENAS -->
+        </div>
+      </div>
+    </section>
+    <!-- /SI:RESENAS -->
+
+    <!-- SI:GALERIA -->
+    <!-- ============ GALERÍA ============ -->
+    <section class="section">
+      <div class="wrap">
+        <header class="head reveal">
+          <div>
+            <p class="kicker">@%%INSTAGRAM%%</p>
+            <h2>Momentos <em>de break</em></h2>
+          </div>
+          <!-- SI:IG_URL --><a class="link" href="%%IG_URL%%" target="_blank" rel="noopener">Síguenos en Instagram <svg class="ic ic--sm"><use href="#i-arrow-up"/></svg></a><!-- /SI:IG_URL -->
+        </header>
+        <div class="gallery reveal"><!-- LISTA:GALERIA -->
+        </div>
+      </div>
+    </section>
+    <!-- /SI:GALERIA -->
+
+    <!-- ============ VISÍTANOS ============ -->
+    <section class="section section--cream" id="visitanos">
+      <div class="wrap visit">
+        <div class="visit__card reveal">
+          <p class="kicker">Visítanos</p>
+          <h2>Te guardamos <em>una mesa</em></h2>
+          <ul class="visit__info">
+            <li><span class="perks__ic"><svg class="ic"><use href="#i-pin"/></svg></span><div><strong>%%DIRECCION%%, %%CIUDAD%%</strong><!-- SI:REFERENCIA --><span>%%REFERENCIA%%</span><!-- /SI:REFERENCIA --></div></li>
+            <!-- SI:SERVICIOS --><li><span class="perks__ic"><svg class="ic"><use href="#i-bag"/></svg></span><div><strong>%%SERVICIOS%%</strong><span>Pide en la barra y disfruta a tu manera.</span></div></li><!-- /SI:SERVICIOS -->
+            <li><span class="perks__ic"><svg class="ic"><use href="#i-clock"/></svg></span><div><strong class="status status--dark" data-status><span class="status__dot"></span><span data-status-text>Horario de atención</span></strong><span>Revisa el detalle por día</span></div></li>
+          </ul>
+          <ul class="hours" data-hours><!-- LISTA:HORARIO -->
+          </ul>
+          <div class="visit__cta">
+            <a class="btn btn--caramel" href="%%MAPS_URL%%" target="_blank" rel="noopener">Abrir en Google Maps <svg class="ic ic--sm"><use href="#i-arrow-up"/></svg></a>
+            <!-- SI:WA_URL --><a class="btn btn--outline" href="%%WA_URL%%" target="_blank" rel="noopener"><svg class="ic ic--sm"><use href="#i-chat"/></svg> WhatsApp</a><!-- /SI:WA_URL -->
+          </div>
+        </div>
+        <div class="visit__map reveal">
+          <iframe title="Mapa de %%NOMBRE%%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=%%MAPA_QUERY%%&z=17&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<!-- PARCIAL:footer -->
+
+  <script>window.TIENDA = %%TIENDA_JSON%%;</script>
+  <script src="app.js" defer></script>
+</body>
+</html>

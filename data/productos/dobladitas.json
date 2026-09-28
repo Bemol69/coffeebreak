@@ -1,0 +1,11 @@
+{
+  "nombre": "Dobladitas",
+  "precio": null,
+  "foto": "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=1200&q=80&auto=format&fit=crop",
+  "descripcion": "La clásica dobladita chilena, tibia y recién salida.",
+  "etiqueta": "",
+  "destacado": false,
+  "orden": 150,
+  "agotado": false,
+  "visible": true
+}

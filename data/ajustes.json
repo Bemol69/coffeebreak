@@ -1,0 +1,58 @@
+{
+  "instagram": "coffeebreak.rancagua",
+  "whatsapp": "",
+  "telefono": "",
+  "email": "",
+  "direccion": "Estado 634",
+  "ciudad": "Rancagua",
+  "region": "Región de O’Higgins",
+  "referencia": "Paseo Estado, centro de Rancagua",
+  "servicios": "Consumo en el local · Para llevar",
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Coffee+Break+Estado+634+Rancagua",
+  "horario": [
+    {
+      "dia": "Lunes",
+      "abre": "07:00",
+      "cierra": "20:00",
+      "cerrado": false
+    },
+    {
+      "dia": "Martes",
+      "abre": "07:00",
+      "cierra": "20:00",
+      "cerrado": false
+    },
+    {
+      "dia": "Miércoles",
+      "abre": "07:00",
+      "cierra": "20:00",
+      "cerrado": false
+    },
+    {
+      "dia": "Jueves",
+      "abre": "07:00",
+      "cierra": "20:00",
+      "cerrado": false
+    },
+    {
+      "dia": "Viernes",
+      "abre": "07:00",
+      "cierra": "20:00",
+      "cerrado": false
+    },
+    {
+      "dia": "Sábado",
+      "abre": "08:00",
+      "cierra": "20:00",
+      "cerrado": false
+    },
+    {
+      "dia": "Domingo",
+      "abre": "",
+      "cierra": "",
+      "cerrado": true
+    }
+  ],
+  "google_nota": "4,8",
+  "google_resenas": 5
+}

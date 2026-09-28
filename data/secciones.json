@@ -1,0 +1,60 @@
+{
+  "nosotros": {
+    "etiqueta": "Más que una cafetería",
+    "titulo": "Tu rincón de barrio",
+    "destacado": "en pleno centro",
+    "texto": "No somos una cadena ni perseguimos modas. Somos un lindo rincón donde cada café cuenta una historia y cada conversación es un momento especial. Preparamos cada taza con cariño y te recibimos como en casa.",
+    "foto1": "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=1000&q=80&auto=format&fit=crop",
+    "foto2": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80&auto=format&fit=crop"
+  },
+  "libros": {
+    "etiqueta": "Un dato que pocos conocen",
+    "titulo": "Libros",
+    "destacado": "por café",
+    "texto": "Trae un libro que ya leíste y llévate otro de nuestra repisa. Busca un rincón en el patio, pide tu café y quédate el rato que quieras.",
+    "foto": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1200&q=80&auto=format&fit=crop"
+  },
+  "mandamientos": [
+    "La vida comienza después del primer café.",
+    "Cada taza de café es una nueva oportunidad.",
+    "Donde hay café, hay esperanza.",
+    "Haz una pausa, toma café y sigue conquistando tus metas.",
+    "Sueña en grande, trabaja con pasión y disfruta un buen café.",
+    "Un buen café, una buena conversación y un gran día.",
+    "Detén el reloj, disfruta el momento. Ese es tu Coffee Break."
+  ],
+  "resenas": [
+    {
+      "nombre": "Marco H.",
+      "origen": "Google",
+      "texto": "Excelente servicio y muy linda la cafetería. Para qué decir la atención, me encantó.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Leandro N.",
+      "origen": "Google",
+      "texto": "Muy buena la comida y muy buen ambiente, muy tranquilo.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Fernanda Q.",
+      "origen": "Google",
+      "texto": "Excelente atención. Muy rico todo.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "@mdap.lifestyle",
+      "origen": "Instagram",
+      "texto": "Amé su concepto de intercambiar libros por café y el patio es tan acogedor que te sientes como en casa. La atención es un 10.",
+      "estrellas": 5
+    }
+  ],
+  "galeria": [
+    "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=800&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1567171466295-4afa63d45416?w=800&q=80&auto=format&fit=crop"
+  ]
+}

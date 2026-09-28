@@ -1,0 +1,12 @@
+{
+  "nombre": "Bebidas frías",
+  "icono": "vaso",
+  "descripcion": "Para los días de calor.",
+  "productos": [
+    "latte-vainilla-frio",
+    "cafe-helado",
+    "iced-coffee"
+  ],
+  "orden": 20,
+  "visible": true
+}

@@ -1,0 +1,12 @@
+{
+  "nombre": "Salados",
+  "icono": "sandwich",
+  "descripcion": "Algo rico para el almuerzo o la once.",
+  "productos": [
+    "ciabatta-rustica",
+    "dobladitas",
+    "sandwich-tostado"
+  ],
+  "orden": 40,
+  "visible": true
+}

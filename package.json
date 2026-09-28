@@ -1,17 +1,19 @@
 {
   "name": "coffeebreak-rancagua",
-  "version": "1.0.0",
-  "description": "Sitio web y panel de administración para Coffee Break, cafetería de especialidad en Rancagua.",
-  "main": "server.js",
+  "private": true,
+  "description": "Coffee Break Rancagua: sitio estático + panel /admin. El build optimiza las fotos con sharp.",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "build": "node scripts/build.mjs",
+    "logo": "node scripts/logo.mjs"
   },
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
-    "express": "^4.21.2",
-    "multer": "^2.0.2"
+    "sharp": "^0.34.4"
+  },
+  "devDependencies": {
+    "@fontsource/playfair-display": "^5.1.0",
+    "opentype.js": "^1.3.4"
   }
 }

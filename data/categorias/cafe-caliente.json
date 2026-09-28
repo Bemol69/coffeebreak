@@ -1,0 +1,15 @@
+{
+  "nombre": "Café caliente",
+  "icono": "taza",
+  "descripcion": "Espresso, capuccino, latte y chocolate.",
+  "productos": [
+    "capuccino",
+    "mokaccino",
+    "americano",
+    "espresso",
+    "latte",
+    "chocolate-caliente"
+  ],
+  "orden": 10,
+  "visible": true
+}

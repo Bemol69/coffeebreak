@@ -1,0 +1,11 @@
+{
+  "nombre": "Ciabatta rústica",
+  "precio": null,
+  "foto": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=1200&q=80&auto=format&fit=crop",
+  "descripcion": "Pan ciabatta rústico con relleno fresco, ideal para un almuerzo al paso.",
+  "etiqueta": "Nuevo",
+  "destacado": false,
+  "orden": 140,
+  "agotado": false,
+  "visible": true
+}
